@@ -1,39 +1,36 @@
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// Inner radius of the circle
-const radius = 140;
+const bg = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/pixi-filters/bg_depth_blur.jpg');
+bg.width = app.screen.width;
+bg.height = app.screen.height;
+app.stage.addChild(bg);
 
-// The blur amount
-const blurSize = 42;
+const littleDudes = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/pixi-filters/depth_blur_dudes.jpg');
+littleDudes.x = (app.screen.width / 2) - 315;
+littleDudes.y = 200;
+app.stage.addChild(littleDudes);
 
-app.loader.add('grass', 'Demo.png');
-app.loader.load(setup);
+const littleRobot = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/pixi-filters/depth_blur_moby.jpg');
+littleRobot.x = (app.screen.width / 2) - 200;
+littleRobot.y = 100;
+app.stage.addChild(littleRobot);
 
-function setup(loader, resources) {
-    const background = new PIXI.Sprite(resources.grass.texture);
-    app.stage.addChild(background);
-    background.width = app.screen.width;
-    background.height = app.screen.height;
+const blurFilter1 = new PIXI.filters.BlurFilter();
+const blurFilter2 = new PIXI.filters.BlurFilter();
 
-    const circle = new PIXI.Graphics()
-        .beginFill(0xFF0000)
-        .drawCircle(radius + blurSize, radius + blurSize, radius)
-        .endFill();
-    circle.filters = [new PIXI.filters.BlurFilter(blurSize)];
+littleDudes.filters = [blurFilter1];
+littleRobot.filters = [blurFilter2];
 
-    const bounds = new PIXI.Rectangle(0, 0, (radius + blurSize) * 2, (radius + blurSize) * 2);
-    const texture = app.renderer.generateTexture(circle, PIXI.SCALE_MODES.NEAREST, 1, bounds);
-    const focus = new PIXI.Sprite(texture);
+let count = 0;
 
-    app.stage.addChild(focus);
-    background.mask = focus;
+app.ticker.add(() => {
+    count += 0.005;
 
-    app.stage.interactive = true;
-    app.stage.on('mousemove', pointerMove);
+    const blurAmount = Math.cos(count);
+    const blurAmount2 = Math.sin(count);
 
-    function pointerMove(event) {
-        focus.position.x = event.data.global.x - focus.width / 2;
-        focus.position.y = event.data.global.y - focus.height / 2;
-    }
-}
+    blurFilter1.blur = 20 * (blurAmount);
+    blurFilter2.blur = 20 * (blurAmount2);
+});
+
