@@ -1,7 +1,7 @@
 // This is demo of pixi-layers.js, https://github.com/pixijs/pixi-layers
 // Drag the rabbits to understand what's going on
 
-const app = new PIXI.Application({ backgroundColor: 0x1099bb });
+const app = new PIXI.Application({ backgroundColor: 0x008A8F });
 document.body.appendChild(app.view);
 
 // META STUFF, groups exist without stage just fine
@@ -13,6 +13,21 @@ greenGroup.on('sort', (sprite) => {
     sprite.zOrder = sprite.y;
 });
 const blackGroup = new PIXI.display.Group(1, ((sprite) => {
+    // blue bunnies go up
+    sprite.zOrder = -sprite.y;
+}));
+
+const redGroup = new PIXI.display.Group(1, ((sprite) => {
+    // blue bunnies go up
+    sprite.zOrder = -sprite.y;
+}));
+
+const whiteGroup = new PIXI.display.Group(1, ((sprite) => {
+    // blue bunnies go up
+    sprite.zOrder = -sprite.y;
+}));
+
+const purpleGroup = new PIXI.display.Group(1, ((sprite) => {
     // blue bunnies go up
     sprite.zOrder = -sprite.y;
 }));
@@ -37,6 +52,9 @@ app.stage.sortableChildren = true;
 app.stage.addChild(new PIXI.display.Layer(greenGroup));
 app.stage.addChild(new PIXI.display.Layer(blueGroup));
 app.stage.addChild(new PIXI.display.Layer(blackGroup));
+app.stage.addChild(new PIXI.display.Layer(redGroup));
+app.stage.addChild(new PIXI.display.Layer(whiteGroup));
+app.stage.addChild(new PIXI.display.Layer(purpleGroup));
 app.stage.addChild(new PIXI.display.Layer(dragGroup));
 app.stage.addChild(new PIXI.display.Layer(shadowGroup));
 
@@ -47,6 +65,9 @@ blurFilter.blur = 0.5;
 const textureGreen = PIXI.Texture.from('ani-bunny.png');
 const textureBlue = PIXI.Texture.from('ani-elephant.png');
 const textureBlack= PIXI.Texture.from('ani-monkey.png');
+const textureRed= PIXI.Texture.from('ani-panda.png');
+const textureWhite= PIXI.Texture.from('ani-pig.png');
+const texturePurple= PIXI.Texture.from('ani-cow.png');
 
 
 // make obsolete containers. Why do we need them?
@@ -60,9 +81,26 @@ app.stage.addChild(bunniesEven);
 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureGreen);
-    bunny.width = 50;
-    bunny.height = 50;
-    bunny.position.set(400 + 20 * i, 400 - 20 * i);
+    bunny.width = 90;
+    bunny.height = 90;
+    bunny.position.set(350 + 20 * i, 350 - 20 * i);
+    bunny.anchor.set(0.5);
+    // that thing is required
+    bunny.parentGroup = greenGroup;
+    if (i % 2 === 0) {
+        bunniesEven.addChild(bunny);
+    } else {
+        bunniesOdd.addChild(bunny);
+    }
+    subscribe(bunny);
+    addShadow(bunny);
+}
+
+for (let i = 1; i >= 0; i--) {
+    const bunny = new PIXI.Sprite(texturePurple);
+    bunny.width = 90;
+    bunny.height = 90;
+    bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
     // that thing is required
     bunny.parentGroup = greenGroup;
@@ -77,9 +115,9 @@ for (let i = 1; i >= 0; i--) {
 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureBlack);
-    bunny.width = 50;
-    bunny.height = 50;
-    bunny.position.set(400 + 20 * i, 400 - 20 * i);
+    bunny.width = 90;
+    bunny.height = 90;
+    bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
     // that thing is required
     bunny.parentGroup = blueGroup;
@@ -88,13 +126,37 @@ for (let i = 1; i >= 0; i--) {
     addShadow(bunny);
 }
 
+for (let i = 1; i >= 0; i--) {
+    const bunny = new PIXI.Sprite(textureRed);
+    bunny.width = 90;
+    bunny.height = 90;
+    bunny.position.set(350 + 20 * i, 350 - 20 * i);
+    bunny.anchor.set(0.5);
+    // that thing is required
+    bunny.parentGroup = blueGroup;
+    bunniesBlue.addChild(bunny);
+    subscribe(bunny);
+    addShadow(bunny);
+}
 
+for (let i = 1; i >= 0; i--) {
+    const bunny = new PIXI.Sprite(textureWhite);
+    bunny.width = 90;
+    bunny.height = 90;
+    bunny.position.set(350 + 20 * i, 350 - 20 * i);
+    bunny.anchor.set(0.5);
+    // that thing is required
+    bunny.parentGroup = blueGroup;
+    bunniesBlue.addChild(bunny);
+    subscribe(bunny);
+    addShadow(bunny);
+}
 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureBlue);
-    bunny.width = 50;
-    bunny.height = 50;
-    bunny.position.set(400 + 20 * i, 400 - 20 * i);
+    bunny.width = 90;
+    bunny.height = 90;
+    bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
     // that thing is required
     bunny.parentGroup = blueGroup;
