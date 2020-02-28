@@ -32,7 +32,7 @@ When trying another script, you will have to change the name of the second scrip
 </head>
 <body>
 <script src="pixi.min.js"></script>
-<script src="Container.js"></script>    
+<script src="Container.js"></script>    // OBS: As mentioned, change the name in order to use it for your example. 
 
 
 <script type="text/javascript">
