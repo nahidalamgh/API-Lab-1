@@ -5,3 +5,5 @@ then a started to draw a triangle in the middle. T
 The main challenge here was to positining the trianggle inside the eclipse. 
 Then I positoned the total graphics in the middle.
 The main benefit of using pixi,js graphics is that you can very easily apply own style guide which is difficult in JAvaScript.
+
+Example done by Nahid Alam
