@@ -1,2 +1,9 @@
-This code was downloaded from the library called PixiJS "https://pixijs.io/examples/#/filters-basic/displacement-map-crawlies.js"
-and put in a context to use for magnificaiton. 
+This code was downloaded from the library called PixiJS 
+"https://pixijs.io/examples/#/filters-basic/displacement-map-crawlies.js" and changed in a context to use for magnificaiton. 
+
+I experimented a bit with the code and ended up with changing the motive, making it lighter, 
+additionally changing the shape of the magnifying glass from a circle to a square. 
+By changing the shape I also changed the visibility of it in because i didnt want it to be as blurry as in their example.
+
+
+
