@@ -2,12 +2,12 @@ const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
 // Inner radius of the circle
-const radius = 100;
+const radius = 70;
 
 // The blur amount
-const blurSize = 32;
+const blurSize = 15;
 
-app.loader.add('grass', 'ani-bunny.png');
+app.loader.add('grass', 'safepage.jpg');
 app.loader.load(setup);
 
 function setup(loader, resources) {
