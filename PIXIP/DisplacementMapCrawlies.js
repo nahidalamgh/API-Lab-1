@@ -15,8 +15,10 @@ const bounds = new PIXI.Rectangle(
 );
 const maggots = [];
 
+// Background picture 
+
 for (let i = 0; i < 20; i++) {
-    const maggot = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/maggot.png');
+    const maggot = PIXI.Sprite.from('map.png');
     maggot.anchor.set(0.5);
     container.addChild(maggot);
 
@@ -40,11 +42,15 @@ app.stage.addChild(displacementSprite);
 
 container.filters = [displacementFilter];
 
+//  Size of the magnifying square and "anchor.set" changes the distance from the mouse to the square. 
+
 displacementFilter.scale.x = 110;
 displacementFilter.scale.y = 110;
 displacementSprite.anchor.set(0.5);
 
-const ring = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/pixi-filters/ring.png');
+// Adding the square or whatever motive you want to add here. 
+
+const ring = PIXI.Sprite.from('square.png');
 
 ring.anchor.set(0.5);
 
@@ -52,7 +58,7 @@ ring.visible = false;
 
 app.stage.addChild(ring);
 
-const bg = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/bg_grass.jpg');
+const bg = PIXI.Sprite.from('map.png');
 bg.width = app.screen.width;
 bg.height = app.screen.height;
 
@@ -76,27 +82,4 @@ let count = 0;
 app.ticker.add(() => {
     count += 0.05;
 
-    for (let i = 0; i < maggots.length; i++) {
-        const maggot = maggots[i];
-
-        maggot.direction += maggot.turnSpeed * 0.01;
-        maggot.x += Math.sin(maggot.direction) * maggot.speed;
-        maggot.y += Math.cos(maggot.direction) * maggot.speed;
-
-        maggot.rotation = -maggot.direction - Math.PI / 2;
-        maggot.scale.x = maggot.original.x + Math.sin(count) * 0.2;
-
-        // wrap the maggots around as the crawl
-        if (maggot.x < bounds.x) {
-            maggot.x += bounds.width;
-        } else if (maggot.x > bounds.x + bounds.width) {
-            maggot.x -= bounds.width;
-        }
-
-        if (maggot.y < bounds.y) {
-            maggot.y += bounds.height;
-        } else if (maggot.y > bounds.y + bounds.height) {
-            maggot.y -= bounds.height;
-        }
-    }
 });
