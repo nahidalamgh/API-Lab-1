@@ -48,6 +48,8 @@ When trying another script, you will have to change the name of the second scrip
  </body>
  </html>
 
+
+
 Important to mention once again that the examples with the code we used during this project were downloaded from the
 PixiJS library (https://pixijs.io/examples/#/demos-basic/container.js). We do not take any credit of the codes. 
 
