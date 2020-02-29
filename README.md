@@ -50,8 +50,8 @@ When trying another script, you will have to change the name of the second scrip
 
 
 
-## Important to mention once again that the examples with the code we used during this project were downloaded from the
-## PixiJS library (https://pixijs.io/examples/#/demos-basic/container.js). We do not take any credit of the codes. 
+Important to mention once again that the examples with the code we used during this project were downloaded from the
+PixiJS library (https://pixijs.io/examples/#/demos-basic/container.js). We do not take any credit of the codes. 
 
 We worked with this project as a group where everyone had their own responsibility to experiment with two examples each,
 of course helping each other out as well. Nahid in the group created the repository on GitHub. 
