@@ -1,3 +1,5 @@
+This code was downloaded from the library called PixiJS "https://pixijs.io/examples/#/sprite/tiling-sprite.js
+
 In this example of tiling the purpose was to arrange identical plane images so that they completely cover the canvas without overlapping.
 At first PIXI app method was called
 For storing the image PIXI.Texture method was created
