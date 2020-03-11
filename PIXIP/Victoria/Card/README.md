@@ -1,4 +1,4 @@
-Libary from https://pixijs.io/examples/#/demos-basic/container.js
+Libary from https://pixijs.io/examples/#/plugin-layers/zorder.js
 
 Z-order in the pixi.js examples
 
