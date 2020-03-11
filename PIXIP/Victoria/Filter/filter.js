@@ -11,7 +11,7 @@ const blurSize = 15;
 app.loader.add('grass', 'safepage.jpg');
 app.loader.load(setup);
 
-
+// the size of the background 
 function setup(loader, resources) {
     const background = new PIXI.Sprite(resources.grass.texture);
     app.stage.addChild(background);
