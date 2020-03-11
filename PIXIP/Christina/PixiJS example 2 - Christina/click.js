@@ -1,12 +1,12 @@
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
 
-// Scale mode for all textures
+// Scale mode for all textures 
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 
 const sprite = PIXI.Sprite.from('kanin.png');
 
-// Set the position
+// Setting the position
 sprite.anchor.set(0.5);
 sprite.x = app.screen.width / 2;
 sprite.y = app.screen.height / 2;
@@ -28,8 +28,4 @@ app.stage.addChild(sprite);
 function onClick() {
     sprite.scale.x *= 1.25;
     sprite.scale.y *= 1.25;
-}
-function onDoubleClick() {
-    sprite.scale.x *= 0.25;
-    sprite.scale.y *= 0.25;
 }
