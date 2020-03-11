@@ -23,18 +23,6 @@ for (let i = 0; i < 20; i++) {
     const maggot = PIXI.Sprite.from('map.png');
     maggot.anchor.set(0.5);
     container.addChild(maggot);
-
-    maggot.direction = Math.random() * Math.PI * 2;
-    maggot.speed = 1;
-    maggot.turnSpeed = Math.random() - 0.8;
-
-    maggot.x = Math.random() * bounds.width;
-    maggot.y = Math.random() * bounds.height;
-
-    maggot.scale.set(1 + Math.random() * 0.3);
-    maggot.original = new PIXI.Point();
-    maggot.original.copy(maggot.scale);
-    maggots.push(maggot);
 }
 
 const displacementSprite = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/pixi-filters/displace.png');
