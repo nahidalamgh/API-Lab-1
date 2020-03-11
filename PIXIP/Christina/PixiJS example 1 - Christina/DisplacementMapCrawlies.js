@@ -15,7 +15,7 @@ const bounds = new PIXI.Rectangle(
 );
 const maggots = [];
 
-// Background picture 
+// Here you can change the background picture, in the ('.png'). 
 
 for (let i = 0; i < 20; i++) {
     const maggot = PIXI.Sprite.from('map.png');
