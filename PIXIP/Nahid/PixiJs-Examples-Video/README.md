@@ -1,4 +1,5 @@
 This code was downloaded from the library called PixiJS "https://pixijs.io/examples/#/sprite/video.js" 
+
 In this eaxmple I have created a custom player button. Usually a player button in HTML is built in but in this case the player button
 has been modifeid or drawn in a new way.
 I started creating play buttuon by drwaing an eclipse in the canvas with PIXI.js Graphics method, 
