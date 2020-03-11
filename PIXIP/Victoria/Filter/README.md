@@ -9,3 +9,4 @@ A black cover canvas, around where you place your mouse is a hole where you are 
 
 In this example purpose it is to cover important and private log in. Prevents others from viewing your screen and information you do not want others to see. 
 
+Done by Victoria Olsson
