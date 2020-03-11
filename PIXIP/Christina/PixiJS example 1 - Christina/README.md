@@ -6,3 +6,5 @@ by chaning the png picture. Changed the size of it by changing the scales on dis
 
 It can be useful in different websites and also games for magnifying anything, as in my example that I downloaded from
 PixiJS), a map. 
+
+The code was downloaded from the pixiJS library and changed by Christina Eric. 
