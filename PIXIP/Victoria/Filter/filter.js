@@ -18,7 +18,7 @@ function setup(loader, resources) {
     background.width = app.screen.width;
     background.height = app.screen.height;
 
-
+// the color of the filter and the shape of it
     const circle = new PIXI.Graphics()
         .beginFill(0xFF0000)
         .drawCircle(radius + blurSize, radius + blurSize, radius)
