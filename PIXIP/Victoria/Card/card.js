@@ -101,7 +101,6 @@ for (let i = 1; i >= 0; i--) {
     bunny.height = 90;
     bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
-    // that thing is required
     bunny.parentGroup = greenGroup;
     if (i % 2 === 0) {
         bunniesEven.addChild(bunny);
@@ -118,7 +117,6 @@ for (let i = 1; i >= 0; i--) {
     bunny.height = 90;
     bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
-    // that thing is required
     bunny.parentGroup = blueGroup;
     bunniesBlue.addChild(bunny);
     subscribe(bunny);
@@ -131,7 +129,6 @@ for (let i = 1; i >= 0; i--) {
     bunny.height = 90;
     bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
-    // that thing is required
     bunny.parentGroup = blueGroup;
     bunniesBlue.addChild(bunny);
     subscribe(bunny);
@@ -144,7 +141,6 @@ for (let i = 1; i >= 0; i--) {
     bunny.height = 90;
     bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
-    // that thing is required
     bunny.parentGroup = blueGroup;
     bunniesBlue.addChild(bunny);
     subscribe(bunny);
@@ -157,7 +153,6 @@ for (let i = 1; i >= 0; i--) {
     bunny.height = 90;
     bunny.position.set(350 + 20 * i, 350 - 20 * i);
     bunny.anchor.set(0.5);
-    // that thing is required
     bunny.parentGroup = blueGroup;
     bunniesBlue.addChild(bunny);
     subscribe(bunny);
