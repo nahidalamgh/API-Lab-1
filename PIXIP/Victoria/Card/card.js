@@ -12,28 +12,28 @@ greenGroup.on('sort', (sprite) => {
     sprite.zOrder = sprite.y;
 });
 const blackGroup = new PIXI.display.Group(1, ((sprite) => {
-    // blue bunnies go up
+    // black monkey bunnies go up
     sprite.zOrder = -sprite.y;
 }));
 
 const redGroup = new PIXI.display.Group(1, ((sprite) => {
-    // blue bunnies go up
+    // red panda go up
     sprite.zOrder = -sprite.y;
 }));
 
 const whiteGroup = new PIXI.display.Group(1, ((sprite) => {
-    // blue bunnies go up
+    // white pig go up
     sprite.zOrder = -sprite.y;
 }));
 
 const purpleGroup = new PIXI.display.Group(1, ((sprite) => {
-    // blue bunnies go up
+    // purple cow go up
     sprite.zOrder = -sprite.y;
 }));
 
 // z-index = 1, sorting = true, we can provide zOrder function directly in constructor
 const blueGroup = new PIXI.display.Group(1, ((sprite) => {
-    // blue bunnies go up
+    // blue elephant go up
     sprite.zOrder = -sprite.y;
 }));
 
@@ -78,6 +78,7 @@ app.stage.addChild(bunniesOdd);
 app.stage.addChild(bunniesBlue);
 app.stage.addChild(bunniesEven);
 
+//this is a loop for the new pixie spread 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureGreen);
     bunny.width = 90;
@@ -95,6 +96,7 @@ for (let i = 1; i >= 0; i--) {
     addShadow(bunny);
 }
 
+//this is a loop for the new pixie spread 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(texturePurple);
     bunny.width = 90;
@@ -111,6 +113,7 @@ for (let i = 1; i >= 0; i--) {
     addShadow(bunny);
 }
 
+//this is a loop for the new pixie spread 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureBlack);
     bunny.width = 90;
@@ -123,6 +126,7 @@ for (let i = 1; i >= 0; i--) {
     addShadow(bunny);
 }
 
+//this is a loop for the new pixie spread 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureRed);
     bunny.width = 90;
@@ -135,6 +139,7 @@ for (let i = 1; i >= 0; i--) {
     addShadow(bunny);
 }
 
+//this is a loop for the new pixie spread 
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureWhite);
     bunny.width = 90;
@@ -147,6 +152,7 @@ for (let i = 1; i >= 0; i--) {
     addShadow(bunny);
 }
 
+//this is a loop for the new pixie sprite
 for (let i = 1; i >= 0; i--) {
     const bunny = new PIXI.Sprite(textureBlue);
     bunny.width = 90;
@@ -159,6 +165,7 @@ for (let i = 1; i >= 0; i--) {
     addShadow(bunny);
 }
 
+//event listener 
 function subscribe(obj) {
     obj.interactive = true;
     obj.on('mousedown', onDragStart)
@@ -171,6 +178,7 @@ function subscribe(obj) {
         .on('touchmove', onDragMove);
 }
 
+//adding function for shadows
 function addShadow(obj) {
     const gr = new PIXI.Graphics();
     gr.beginFill(0x0, 1);
@@ -184,6 +192,7 @@ function addShadow(obj) {
     obj.addChild(gr);
 }
 
+//creating a function for drag start 
 function onDragStart(event) {
     if (!this.dragging) {
         this.data = event.data;
@@ -199,6 +208,7 @@ function onDragStart(event) {
     }
 }
 
+//creating function for drag end 
 function onDragEnd() {
     if (this.dragging) {
         this.dragging = false;
@@ -210,6 +220,7 @@ function onDragEnd() {
     }
 }
 
+//creating function for drag move 
 function onDragMove() {
     if (this.dragging) {
         const newPosition = this.data.getLocalPosition(this.parent);
