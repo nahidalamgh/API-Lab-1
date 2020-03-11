@@ -25,20 +25,20 @@ function setup(loader, resources) {
         .endFill();
     circle.filters = [new PIXI.filters.BlurFilter(blurSize)];
 
-
+//draw new pixie rectangle 
     const bounds = new PIXI.Rectangle(0, 0, (radius + blurSize) * 2, (radius + blurSize) * 2);
     const texture = app.renderer.generateTexture(circle, PIXI.SCALE_MODES.NEAREST, 1, bounds);
     const focus = new PIXI.Sprite(texture);
 
-  
+// DOM 
     app.stage.addChild(focus);
     background.mask = focus;
 
-   
+// function of mouse event    
     app.stage.interactive = true;
     app.stage.on('mousemove', pointerMove);
 
-
+// function for locating pointerMove
     function pointerMove(event) {
         focus.position.x = event.data.global.x - focus.width / 2;
         focus.position.y = event.data.global.y - focus.height / 2;
