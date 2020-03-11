@@ -48,6 +48,7 @@ app.stage = new PIXI.display.Stage();
 // PixiJS v5 sorting - works on zIndex - and layer gets its zIndex from a group!
 app.stage.sortableChildren = true;
 // sorry, group cant exist without layer yet :(;
+// all the layers of the jpgs 
 app.stage.addChild(new PIXI.display.Layer(greenGroup));
 app.stage.addChild(new PIXI.display.Layer(blueGroup));
 app.stage.addChild(new PIXI.display.Layer(blackGroup));
