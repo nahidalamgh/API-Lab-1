@@ -61,7 +61,7 @@ app.stage.addChild(new PIXI.display.Layer(shadowGroup));
 const blurFilter = new PIXI.filters.BlurFilter();
 blurFilter.blur = 0.5;
 
-// create a texture from an image path
+// create a texture from an image path, animals 
 const textureGreen = PIXI.Texture.from('ani-bunny.png');
 const textureBlue = PIXI.Texture.from('ani-elephant.png');
 const textureBlack= PIXI.Texture.from('ani-monkey.png');
