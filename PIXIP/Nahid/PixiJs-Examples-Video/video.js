@@ -3,14 +3,14 @@ document.body.appendChild(app.view);
 
 
 // design a play button with new color and sizes using PIXI graphics method
-// Create play button that can be used to trigger the video.  Started with drawing a cicle
+// Create play button that can be used to trigger the video.  Started with drawing a eclipse
 
 const button = new PIXI.Graphics()
     .lineStyle(2, 0xA9F5D0, 1)
     .beginFill(0xA9F5D0, 1)
     .drawEllipse(48, 50, 80, 50)
     .endFill()
-    // drawing the triangle inside the circle, positioning the x, y axis
+    // drawing the triangle inside the eclipse, positioning the x, y axis
     .beginFill(0x5F04B4)
     .moveTo(36, 30)
     .lineTo(36, 70)
