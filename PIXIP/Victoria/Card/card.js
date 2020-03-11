@@ -57,6 +57,7 @@ app.stage.addChild(new PIXI.display.Layer(purpleGroup));
 app.stage.addChild(new PIXI.display.Layer(dragGroup));
 app.stage.addChild(new PIXI.display.Layer(shadowGroup));
 
+// adding a blur filter 
 const blurFilter = new PIXI.filters.BlurFilter();
 blurFilter.blur = 0.5;
 
