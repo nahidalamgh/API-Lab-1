@@ -20,6 +20,7 @@ In order to get started with the PixiJS library you have to clone the PixiJS lib
 .JS file for every application that you want to implement. Afterwards you need to connect the .JS file to the html file. 
 Try some examples from the library (PixiJS) and experiment with different codes in order to get an understanding
 of how they work and what they do. 
+If you are working with a example from the libary that need plug ins, you need to download them from PixiJS and implement it into the html file, for it to run.
 
 How to make your code work:
 When trying another script, you will have to change the name of the second script inside of the index.html document.
