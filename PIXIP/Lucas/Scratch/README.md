@@ -1,3 +1,5 @@
+This code was downloaded from the library called PixiJS "https://pixijs.io/examples/?v=v5.2.1#/demos-advanced/scratchcard.js" and changed in a context to use for scratching of the top layer.
+
 The JavaScript code is created to hide whats underneath the first layer of the image, once the user presses the mousebutton 
 and hovers over the image, the image underneath the black screen will show. 
 
