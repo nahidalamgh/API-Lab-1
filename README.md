@@ -1,5 +1,5 @@
 In this project, we have used the Library called PIXI.js (www.pixijs.com) and tried to recreate and improve on rich, 
-interactive graphics for cross platform application/games from the already prebuilt releases made by PixiJS.   
+interactive graphics for cross-platform application/games from the already prebuilt releases made by PixiJS.   
 
 This project was an eye-opener for using an API library in prototyping. 
 We learned how to apply the API’s while prototyping and trying to work with GitHub. 
@@ -7,7 +7,7 @@ GitHub has been a nice experience for us where we learned how to contribute and 
 
 This project is very useful because it provides multiple opportunities to use it for: games, 
 platform applications and interactive graphics are just a few examples. Using an already prebuilt 
-code to recreate in order to bring new prototypes is not only time efficient but also inspiring. 
+code to change it and create new things with an existing base idea is not only time efficient but also inspiring. 
 The examples provided from the library give inspiration and an understanding of how the code works 
 along with making it easy to change the code and experiment with it. 
 
@@ -17,7 +17,7 @@ could have their own attributes. The importance of feedback, and lack of it, for
 of this project that we have paid attention to.
 
 In order to get started with the PixiJS library you have to clone the PixiJS library from github and then you have to create
-.JS file for every application that you want to implement. Afterwards you have to connect the .JS file to the html file. 
+.JS file for every application that you want to implement. Afterwards you need to connect the .JS file to the html file. 
 Try some examples from the library (PixiJS) and experiment with different codes in order to get an understanding
 of how they work and what they do. 
 
