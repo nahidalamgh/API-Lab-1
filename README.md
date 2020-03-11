@@ -1,9 +1,8 @@
 In this project, we have used the Library called PIXI.js (www.pixijs.com) and tried to recreate and improve on rich, 
 interactive graphics for cross-platform application/games from the already prebuilt releases made by PixiJS.   
 
-This project was an eye-opener for using an API library in prototyping. 
-We learned how to apply the API’s while prototyping and trying to work with GitHub. 
-GitHub has been a nice experience for us where we learned how to contribute and share the workspace with each other. 
+This project was focused on exploring an API library and its possible uses in prototyping. 
+We learned how to apply the API’s while prototyping and trying to work with GitHub, as well as how to contribute and share the workspace with each other. 
 
 This project is very useful because it provides multiple opportunities to use it for: games, 
 platform applications and interactive graphics are just a few examples. Using an already prebuilt 
