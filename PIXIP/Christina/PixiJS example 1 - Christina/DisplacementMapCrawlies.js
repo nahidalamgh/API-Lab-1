@@ -6,6 +6,8 @@ app.stage.interactive = true;
 const container = new PIXI.Container();
 app.stage.addChild(container);
 
+// Margin between the border and the element's content.
+
 const padding = 100;
 const bounds = new PIXI.Rectangle(
     -padding,
@@ -65,6 +67,8 @@ bg.height = app.screen.height;
 bg.alpha = 0.4;
 
 container.addChild(bg);
+
+// Adding event 
 
 app.stage
     .on('mousemove', onPointerMove)
