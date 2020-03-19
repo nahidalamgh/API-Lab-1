@@ -1,7 +1,7 @@
 const app = new PIXI.Application({ backgroundColor: 0x000000 });
 document.body.appendChild(app.view);
 
- // Added the assigned pictures, different from original
+ // Added the assigned pictures, different from original. In this case, numbers.
 app.loader
     .add('1.jpg', '1.jpg')
     .add('2.jpg', '2.jpg')
@@ -22,7 +22,7 @@ function onAssetsLoaded() {
         PIXI.Texture.from('4.jpg'),
     ];
 
-    // Built the reels
+    // Here the reels are set up
     const reels = [];
     const reelContainer = new PIXI.Container();
     for (let i = 0; i < 4; i++) {
@@ -37,15 +37,16 @@ function onAssetsLoaded() {
             previousPosition: 0,
             blur: new PIXI.filters.BlurFilter(),
         };
+	// Blur is set to 0    
         reel.blur.blurX = 0;
         reel.blur.blurY = 0;
         rc.filters = [reel.blur];
 
-        // Build the symbols
+        // Built the symbols
         for (let j = 0; j < 4; j++) {
             let number=Math.floor(Math.random() * slotTextures.length); //
             const symbol = new PIXI.Sprite(slotTextures[number]);   //
-            // Scaled the symbol to fit symbol area
+        // Scaled the symbols to fit symbol areas
             console.log(number+1);
             symbol.y = j * SYMBOL_SIZE;
             symbol.scale.x = symbol.scale.y = Math.min(SYMBOL_SIZE / symbol.width, SYMBOL_SIZE / symbol.height);
@@ -57,7 +58,7 @@ function onAssetsLoaded() {
     }
     app.stage.addChild(reelContainer);
 
-    // Built top & bottom covers and position reelContainer
+    // Built top & bottom covers and position the reelContainer
     const margin = (app.screen.height - SYMBOL_SIZE * 3) / 2;
     reelContainer.y = margin;
     reelContainer.x = (app.screen.width - REEL_WIDTH * 5);
@@ -68,7 +69,7 @@ function onAssetsLoaded() {
     bottom.beginFill(0, 1);
     bottom.drawRect(0, SYMBOL_SIZE * 3 + margin, app.screen.width, margin);
 
-    // Add play text
+    // Configuration and settings for the play text
     const style = new PIXI.TextStyle({
         fontFamily: 'Arial',
         fontSize: 36,
@@ -95,7 +96,7 @@ function onAssetsLoaded() {
     playText.y = app.screen.height - margin + Math.round((margin - playText.height) / 2);
     bottom.addChild(playText);
 
-    // Add header text
+    // The header text is set
     const headerText = new PIXI.Text('DATE SLOTS!', style);
     headerText.x = Math.round((top.width - headerText.width) / 2);
     headerText.y = Math.round((margin - headerText.height) / 2);
@@ -105,7 +106,7 @@ function onAssetsLoaded() {
     app.stage.addChild(top);
     app.stage.addChild(bottom);
 
-    // Set the interactivity
+    // Setting the interactivity for the game
     bottom.interactive = true;
     bottom.buttonMode = true;
     bottom.addListener('pointerdown', () => {
@@ -114,7 +115,7 @@ function onAssetsLoaded() {
 
     let running = false;
 
-    // Function to start playing the game
+    // This is setting the function to start playing the game
     function startPlay() {
         if (running) return;
         running = true;
@@ -144,18 +145,18 @@ function onAssetsLoaded() {
         for (let i = 0; i < reels.length; i++) {
             const r = reels[i];
             // Update blur filter y amount based on speed.
-            // This would be better if calculated with time in mind also. Now blur depends on frame rate.
+            // Now the blur depends on frame rate.
             r.blur.blurY = (r.position - r.previousPosition) * 8;
             r.previousPosition = r.position;
 
-            // Update symbol positions on reel.
+            // Update symbol positions on reel when at work.
             for (let j = 0; j < r.symbols.length; j++) {
                 const s = r.symbols[j];
                 const prevy = s.y;
                 s.y = ((r.position + j) % r.symbols.length) * SYMBOL_SIZE - SYMBOL_SIZE;
                 if (s.y < 0 && prevy > SYMBOL_SIZE) {
-                    // Detect going over and swap a texture.
-                    // This should in proper product be determined from some logical reel.
+                    // The motion of going over and swapping the textures.
+             
                     s.texture = slotTextures[Math.floor(Math.random() * slotTextures.length)];
                     s.scale.x = s.scale.y = Math.min(SYMBOL_SIZE / s.texture.width, SYMBOL_SIZE / s.texture.height);
                     s.x = Math.round((SYMBOL_SIZE - s.width) / 2);
@@ -165,7 +166,7 @@ function onAssetsLoaded() {
     });
 }
 
-// Very simple tweening utility function. 
+// Basic tweening utility function 
 const tweening = [];
 function tweenTo(object, property, target, time, easing, onchange, oncomplete) {
     const tween = {
@@ -183,7 +184,7 @@ function tweenTo(object, property, target, time, easing, onchange, oncomplete) {
     tweening.push(tween);
     return tween;
 }
-// Listen for animate update.
+// Event listener for animation update
 app.ticker.add((delta) => {
     const now = Date.now();
     const remove = [];
@@ -209,7 +210,7 @@ function lerp(a1, a2, t) {
     return a1 * (1 - t) + a2 * t;
 }
 
-// Backout function from tweenjs.
+// Backout function from tweenjs included in the example
 // https://github.com/CreateJS/TweenJS/blob/master/src/tweenjs/Ease.js
 function backout(amount) {
     return t => (--t * t * ((amount + 1) * t + amount) + 1);
